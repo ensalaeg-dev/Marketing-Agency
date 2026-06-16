@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # Search Engine (Discovery Tool)
+  searxng:
+    image: searxng/searxng
+    container_name: searxng
+    ports:
+      - "8080:8080"
+    environment:
+      - SEARXNG_SETTINGS_URL=https://raw.githubusercontent.com/searxng/searxng/master/utils/brand/searxng-settings.yml
+    restart: always
+
+  # FastAPI Backend (CrewAI Logic)
+  api:
+    build: .
+    container_name: growth_api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./community_database:/app/community_database
+    depends_on:
+      - searxng
+    restart: always
+
+  # Streamlit Dashboard (Custom DB Management)
+  dashboard:
+    build: .
+    container_name: growth_dashboard
+    command: streamlit run dashboard.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./community_database:/app/community_database
+    depends_on:
+      - api
+    restart: always
+
+  # CrewUI (Visual Workflow Monitor)
+  crewui:
+    image: crewai/crewai-ui:latest
+    container_name: crewui
+    ports:
+      - "3000:3000"
+    environment:
+      - API_URL=http://api:8000
+    depends_on:
+      - api
+    restart: always
