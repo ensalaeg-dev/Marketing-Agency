@@ -1,4 +1,8 @@
 {
+    "Orchestrator Manager": {
+        "provider": "gemini",
+        "model": "gemini-1.5-pro"
+    },
     "Discovery Specialist": {
         "provider": "kimi",
         "model": "moonshot-v1-8k"
@@ -17,7 +21,7 @@
     },
     "Media Director": {
         "provider": "gemini",
-        "model": "gemini-1.5-pro"
+        "model": "gemini-1.5-flash"
     },
     "Publisher": {
         "provider": "openai",
@@ -30,5 +34,13 @@
     "Analytics Specialist": {
         "provider": "kimi",
         "model": "moonshot-v1-8k"
-    }
+    },
+    "Facebook Strategist": { "provider": "openai", "model": "gpt-4-turbo" },
+    "Facebook Copywriter": { "provider": "kimi", "model": "moonshot-v1-8k" },
+    "WhatsApp Manager": { "provider": "openai", "model": "gpt-4-turbo" },
+    "WhatsApp Writer": { "provider": "kimi", "model": "moonshot-v1-8k" },
+    "Telegram Specialist": { "provider": "openai", "model": "gpt-4-turbo" },
+    "Telegram Writer": { "provider": "kimi", "model": "moonshot-v1-8k" },
+    "Forum Researcher": { "provider": "openai", "model": "gpt-4-turbo" },
+    "Forum Writer": { "provider": "kimi", "model": "moonshot-v1-8k" }
 }

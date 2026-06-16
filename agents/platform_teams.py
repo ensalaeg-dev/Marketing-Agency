@@ -90,12 +90,13 @@ class PlatformTeams:
         return [
             Agent(
                 role="Egyptian Creative Director",
-                goal="Generate high-quality visual assets tailored for the Egyptian market across all platforms.",
-                backstory="A visionary director who understands what visuals resonate in Egypt, from Cairo's high-end retail to local wholesale markets.",
+                goal="Generate high-quality visual assets tailored for the Egyptian market across all platforms using Nano Banana and Veo.",
+                backstory="A visionary director who understands what visuals resonate in Egypt. "
+                          "Equipped with Google Nano Banana and Veo for next-generation image and video generation.",
                 llm=get_llm("Media Director"),
                 tools=[
-                    MediaGenerationTools.generate_image_gemini,
-                    MediaGenerationTools.generate_video_gemini,
+                    MediaGenerationTools.generate_image_nano_banana,
+                    MediaGenerationTools.generate_video_veo,
                     MediaGenerationTools.generate_image_dalle,
                     MediaGenerationTools.generate_video_runway
                 ]

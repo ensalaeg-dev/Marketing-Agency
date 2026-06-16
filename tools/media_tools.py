@@ -8,26 +8,25 @@ class MediaGenerationTools:
     Tools for generating images and videos using various AI providers.
     """
 
-    @tool("Generate Image with Gemini Imagen")
-    def generate_image_gemini(prompt: str) -> str:
+    @tool("Generate Image with Google Nano Banana")
+    def generate_image_nano_banana(prompt: str) -> str:
         """
-        Generates a high-quality image using Google Gemini Imagen API.
-        Best for strong prompt adherence and commercial-safe designs.
+        Generates a high-quality image using Google Nano Banana (Gemini 3.1 Flash Image).
+        Best for strong prompt adherence, speed, and culturally relevant Egyptian designs.
         """
         api_key = os.getenv("GEMINI_API_KEY")
-        # Implementation placeholder for Gemini Imagen API call
-        # In a real scenario, this would use the Google Cloud/Vertex AI SDK
-        return f"Successfully generated image with Gemini Imagen for prompt: '{prompt}'. URL: https://example.com/gemini_img.png"
+        # Implementation placeholder for Google Nano Banana API call
+        return f"Successfully generated image with Google Nano Banana for prompt: '{prompt}'. URL: https://example.com/nano_banana_img.png"
 
-    @tool("Generate Video with Gemini Veo")
-    def generate_video_gemini(prompt: str) -> str:
+    @tool("Generate Video with Google Veo")
+    def generate_video_veo(prompt: str) -> str:
         """
-        Generates a professional cinematic video using Google Gemini Veo API.
-        Best for high-fidelity motion and complex scenes.
+        Generates a professional cinematic video using Google Veo.
+        Best for high-fidelity motion and complex cinematic scenes for Egyptian ads.
         """
         api_key = os.getenv("GEMINI_API_KEY")
-        # Implementation placeholder for Gemini Veo API call
-        return f"Successfully generated video with Gemini Veo for prompt: '{prompt}'. URL: https://example.com/gemini_video.mp4"
+        # Implementation placeholder for Google Veo API call
+        return f"Successfully generated video with Google Veo for prompt: '{prompt}'. URL: https://example.com/veo_video.mp4"
 
     @tool("Generate Image with DALL-E 3")
     def generate_image_dalle(prompt: str) -> str:

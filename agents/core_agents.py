@@ -117,15 +117,16 @@ class EgyptianGrowthAgents:
     def media_management_agent(self) -> Agent:
         return Agent(
             role="Media & Creative Director",
-            goal="Suggest the optimal media format and generate high-quality visual assets using AI models like Gemini Veo/Imagen or Runway.",
+            goal="Suggest the optimal media format and generate high-quality visual assets using AI models like Google Nano Banana and Veo.",
             backstory="A visionary art director with a deep understanding of what visually appeals to the Egyptian market. "
-                      "You are equipped with tools to generate images and videos on demand using Gemini Imagen, Veo, Runway, and DALL-E.",
+                      "You are equipped with cutting-edge tools to generate images and videos on demand using Google Nano Banana (Flash Image) and Veo, "
+                      "ensuring high-speed and cinematic quality for local campaigns.",
             verbose=True,
             allow_delegation=False,
             llm=get_llm("Media Director"),
             tools=[
-                MediaGenerationTools.generate_image_gemini,
-                MediaGenerationTools.generate_video_gemini,
+                MediaGenerationTools.generate_image_nano_banana,
+                MediaGenerationTools.generate_video_veo,
                 MediaGenerationTools.generate_image_dalle,
                 MediaGenerationTools.generate_video_runway,
                 MediaGenerationTools.generate_with_replicate,
